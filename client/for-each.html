@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <div id="daily"></div>
+    
+    
+        <script>
+            const products = [
+                {title: 'Burger', price: 121},
+                {title: 'Pizza', price: 20},
+                {title: 'Sushi', price: 50}
+            ];
+
+
+            const tasks = [
+                {name:'Completar reto', status:true},
+                {name:'Terminar tarea', status:false},
+                {name:'Dar de comer a blanca', status:true},
+                {name:'Limpiar casa', status:false}
+            ]
+
+            const app = document.getElementById('app');
+            // Imprimiendo un objeto con for each
+            products.forEach(product =>{
+                app.innerHTML += `<li>${product.title} - ${product.price}</li>`
+            })
+
+            //Recorriendo un objeto en el cual marcamos el checkbox si la tarea ya esta completada
+            const daily = document.getElementById('daily')
+            tasks.forEach(task =>[
+                daily.innerHTML += `<li>${task.name}  - <input type="checkbox" ${task.status ? 'checked' : false}> </li>`
+            ])
+
+            
+
+        </script>
+    
+</body>
+</html>
