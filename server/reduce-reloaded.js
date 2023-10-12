@@ -13,6 +13,35 @@ const rta = items.reduce((obj, item) => {
 
 console.log(rta);
 
+
+//Contar por rangos
+//Cuantos valores hay de 1 - 5
+//Cuantos valores hay de 6 - 8
+//Cuantos valores hay de 9 - 10
+const arr = [3, 10, 9, 4, 3, 1, 8, 4, 7, 6];
+const result = arr.reduce((obj, item) => {
+  if (item <= 5) {
+    obj['1-5']++
+  } else if (item <= 8) {
+    obj['6-8']++
+  } else {
+    obj['9-10']++
+  }
+  return obj
+}, {
+  '1-5': 0,
+  '6-8': 0,
+  '9-10': 0
+})
+
+console.log(result)
+
+
+
+
+
+
+
 const data = [
   {
     name: "Nicolas",
@@ -56,21 +85,4 @@ const rta2 = data
 
 console.log(rta2);
 
-//Contar por rangos
-//Cuantos valores hay de 1 - 5
-//Cuantos valores hay de 6 - 8
-//Cuantos valores hay de 9 - 10
-const items2 = [1, 3, 2, 3];
-const rta3 = items2
-  .map((item) => item.level)
-  .reduce((obj, item) => {
-    if (!obj[item]) {
-      obj[item] = 1;
-    } else {
-      obj[item] = obj[item] + 1;
-    }
 
-    return obj;
-  }, {});
-
-console.log(rta3);
